@@ -18,8 +18,8 @@ import (
 	"time"
 
 	"github.com/coreos/etcd/clientv3"
+	"github.com/fuguohong1024/moha/pkg/log"
 	"github.com/juju/errors"
-	"github.com/moiot/moha/pkg/log"
 )
 
 var spmPath = "single_point_master"

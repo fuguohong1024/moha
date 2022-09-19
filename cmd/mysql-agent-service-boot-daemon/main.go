@@ -18,7 +18,7 @@ import (
 	"os"
 	"syscall"
 
-	"github.com/moiot/moha/pkg/log"
+	"github.com/fuguohong1024/moha/pkg/log"
 )
 
 func main() {

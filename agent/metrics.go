@@ -16,7 +16,7 @@ package agent
 import (
 	"runtime/debug"
 
-	"github.com/moiot/moha/pkg/log"
+	"github.com/fuguohong1024/moha/pkg/log"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

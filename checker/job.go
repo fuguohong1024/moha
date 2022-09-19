@@ -17,7 +17,7 @@ import (
 	"database/sql"
 	"time"
 
-	"github.com/moiot/moha/pkg/log"
+	"github.com/fuguohong1024/moha/pkg/log"
 )
 
 // DMLJob is the abstraction of the writing and checking job

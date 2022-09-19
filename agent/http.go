@@ -20,8 +20,8 @@ import (
 	"net/url"
 	"time"
 
+	"github.com/fuguohong1024/moha/pkg/log"
 	"github.com/juju/errors"
-	"github.com/moiot/moha/pkg/log"
 )
 
 func (s *Server) initHTTPServer() (*http.Server, error) {

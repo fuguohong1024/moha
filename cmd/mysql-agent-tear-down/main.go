@@ -21,8 +21,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/moiot/moha/agent"
-	"github.com/moiot/moha/pkg/log"
+	"github.com/fuguohong1024/moha/agent"
+	"github.com/fuguohong1024/moha/pkg/log"
 )
 
 func main() {

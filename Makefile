@@ -1,4 +1,4 @@
-TOOLS_PKG := github.com/moiot/moha
+TOOLS_PKG := github.com/fuguohong1024/moha
 
 VERSION := $(shell git describe --tags --dirty)
 
@@ -6,7 +6,7 @@ LDFLAGS += -X "$(TOOLS_PKG)/agent.Version=$(VERSION)"
 LDFLAGS += -X "$(TOOLS_PKG)/agent.BuildTS=$(shell date -u '+%Y-%m-%d %I:%M:%s')"
 LDFLAGS += -X "$(TOOLS_PKG)/agent.GitHash=$(shell git rev-parse HEAD)"
 
-GO      := GO15VENDOREXPERIMENT="1" go
+GO      := go
 GOBUILD := $(GO) build
 GOTEST  := $(GO) test
 

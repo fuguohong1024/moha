@@ -20,8 +20,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/moiot/moha/agent"
-	"github.com/moiot/moha/pkg/log"
+	"github.com/fuguohong1024/moha/agent"
+	"github.com/fuguohong1024/moha/pkg/log"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 

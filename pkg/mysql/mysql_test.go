@@ -18,8 +18,8 @@ import (
 	"database/sql/driver"
 	"testing"
 
-	"github.com/moiot/moha/pkg/log"
-	"github.com/moiot/moha/pkg/mysql"
+	"github.com/fuguohong1024/moha/pkg/log"
+	"github.com/fuguohong1024/moha/pkg/mysql"
 	"gopkg.in/DATA-DOG/go-sqlmock.v1"
 	. "gopkg.in/check.v1"
 )

@@ -25,12 +25,12 @@ import (
 	"testing"
 	"time"
 
-	_ "github.com/coreos/bbolt"
+	//_ "github.com/coreos/bbolt"
 	"github.com/coreos/etcd/clientv3"
 	"github.com/coreos/etcd/integration"
+	"github.com/fuguohong1024/moha/pkg/etcd"
+	"github.com/fuguohong1024/moha/pkg/log" // import for size-effect
 	"github.com/juju/errors"
-	"github.com/moiot/moha/pkg/etcd"
-	"github.com/moiot/moha/pkg/log" // import for size-effect
 	. "gopkg.in/check.v1"
 )
 

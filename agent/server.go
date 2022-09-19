@@ -25,11 +25,11 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/fuguohong1024/moha/pkg/etcd"
+	"github.com/fuguohong1024/moha/pkg/log"
+	"github.com/fuguohong1024/moha/pkg/mysql"
+	"github.com/fuguohong1024/moha/pkg/systemcall"
 	"github.com/juju/errors"
-	"github.com/moiot/moha/pkg/etcd"
-	"github.com/moiot/moha/pkg/log"
-	"github.com/moiot/moha/pkg/mysql"
-	"github.com/moiot/moha/pkg/systemcall"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

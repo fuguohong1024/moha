@@ -19,9 +19,9 @@ import (
 	"strconv"
 	"syscall"
 
-	"github.com/moiot/moha/agent"
-	"github.com/moiot/moha/pkg/log"
-	"github.com/moiot/moha/pkg/systemcall"
+	"github.com/fuguohong1024/moha/agent"
+	"github.com/fuguohong1024/moha/pkg/log"
+	"github.com/fuguohong1024/moha/pkg/systemcall"
 )
 
 func main() {

@@ -20,8 +20,8 @@ import (
 	"time"
 
 	"github.com/BurntSushi/toml"
+	"github.com/fuguohong1024/moha/pkg/types"
 	"github.com/juju/errors"
-	"github.com/moiot/moha/pkg/types"
 )
 
 const (

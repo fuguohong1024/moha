@@ -17,7 +17,7 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/moiot/moha/pkg/log"
+	"github.com/fuguohong1024/moha/pkg/log"
 )
 
 var (

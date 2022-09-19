@@ -17,8 +17,8 @@ import (
 	"sync"
 
 	"github.com/coreos/etcd/clientv3/concurrency"
+	"github.com/fuguohong1024/moha/pkg/log"
 	"github.com/juju/errors"
-	"github.com/moiot/moha/pkg/log"
 )
 
 // NewDistributedLockGenerator creates DistributedLockGenerator

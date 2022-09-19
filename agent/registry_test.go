@@ -17,9 +17,9 @@ import (
 	"context"
 	"time"
 
+	"github.com/fuguohong1024/moha/pkg/etcd"
+	"github.com/fuguohong1024/moha/pkg/log"
 	"github.com/juju/errors"
-	"github.com/moiot/moha/pkg/etcd"
-	"github.com/moiot/moha/pkg/log"
 	. "gopkg.in/check.v1"
 )
 

@@ -18,8 +18,8 @@ import (
 	"os/signal"
 	"syscall"
 
+	"github.com/fuguohong1024/moha/checker"
 	"github.com/juju/errors"
-	"github.com/moiot/moha/checker"
 	log "github.com/sirupsen/logrus"
 )
 
