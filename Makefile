@@ -26,11 +26,15 @@ TAG := $(shell git rev-parse --abbrev-ref HEAD | tr / -)-$(shell git rev-parse -
 
 .PHONY: $(MAKECMDGOALS)
 
-default: build
+help: ## Display this help
+	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z_0-9-]+:.*?##/ { printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
+
+
+default: build ## default build bin file to ./bin/
 
 build: agent
 
-clean:
+clean: ## rm -f bin
 	@rm -rf bin
 
 agent:
@@ -42,7 +46,7 @@ agent:
 docker-agent:
 	mkdir -p bin/
 	docker run --rm -v `pwd`:/usr/src/myapp -w /usr/src/myapp gcc:8.1.0 gcc -o bin/supervise supervise/*.c
-	docker run --rm -v `pwd`:/go/src/github.com/moiot/moha -w /go/src/github.com/moiot/moha golang:1.11.0 make agent
+	docker run --rm -v `pwd`:/go/src/github.com/fuguohong1024/moha -w /go/src/github.com/fuguohong1024/moha golang:1.11.0 make agent
 	cp bin/* etc/docker-compose/agent/
 	cp bin/* etc/docker-compose/postgresql/
 
@@ -50,7 +54,7 @@ checker:
 	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/mysql-agent-checker cmd/mysql-agent-checker/main.go
 
 docker-checker:
-	docker run --rm -e GOOS=`uname | tr 'A-Z' 'a-z'` -v `pwd`:/go/src/github.com/moiot/moha -w /go/src/github.com/moiot/moha golang:1.11.0 bash -c "make checker"
+	docker run --rm -e GOOS=`uname | tr 'A-Z' 'a-z'` -v `pwd`:/go/src/github.com/fuguohong1024/moha -w /go/src/github.com/fuguohong1024/moha golang:1.11.0 bash -c "make checker"
 
 checker-test:
 	@ docker exec mysql-node-1 mysql -h 127.0.0.1 -P 3306 -u mysql_user -pmysql_master_user_pwd -e 'select 1' >/dev/null || true
@@ -81,7 +85,7 @@ lint:
 	@echo "done!"
 
 update:
-	dep ensure
+	go mod tidy
 	@echo "done!"
 
 fmt:
@@ -91,7 +95,6 @@ fmt:
 	@echo "done!"
 
 init:
-	@ which dep >/dev/null || curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 	@ which golint >/dev/null || go get -u golang.org/x/lint/golint
 	@ which goimports >/dev/null || go get -u golang.org/x/tools/cmd/goimports
 	@ which cpplint >/dev/null || pip install cpplint
